@@ -1,0 +1,40 @@
+####Sample Output#########
+
+Present CPU Utilization: 0.78, Present Replicas: 10
+Updated replicas to 9
+Error while communicating with the application: 500 Server Error: Internal Server Error for url: http://localhost:8123/app/status
+Present CPU Utilization: 0.79, Present Replicas: 9
+Updated replicas to 8
+Present CPU Utilization: 1, Present Replicas: 8
+Updated replicas to 10
+Present CPU Utilization: 1, Present Replicas: 10
+Updated replicas to 12
+Error while communicating with the application: 500 Server Error: Internal Server Error for url: http://localhost:8123/app/status
+Error while communicating with the application: 500 Server Error: Internal Server Error for url: http://localhost:8123/app/status
+Present CPU Utilization: 0.8, Present Replicas: 12
+Scaling is not required
+Present CPU Utilization: 0.8, Present Replicas: 12
+Scaling is not required
+Present CPU Utilization: 0.8, Present Replicas: 12
+Scaling is not required
+Present CPU Utilization: 0.8, Present Replicas: 12
+Scaling is not required
+Present CPU Utilization: 0.82, Present Replicas: 12
+Present CPU Utilization: 0.83, Present Replicas: 12
+Present CPU Utilization: 0.9, Present Replicas: 12
+Updated replicas to 13
+Present CPU Utilization: 0.53, Present Replicas: 13
+Error while communicating with the application: 500 Server Error: Internal Server Error for url: http://localhost:8123/app/replicas
+Present CPU Utilization: 0.43, Present Replicas: 13
+Updated replicas to 12
+Present CPU Utilization: 0.63, Present Replicas: 12
+Updated replicas to 11
+Present CPU Utilization: 0.94, Present Replicas: 11
+Error while communicating with the application: 500 Server Error: Internal Server Error for url: http://localhost:8123/app/replicas
+Present CPU Utilization: 0.95, Present Replicas: 11
+Updated replicas to 13
+Present CPU Utilization: 0.73, Present Replicas: 13
+Updated replicas to 12
+Present CPU Utilization: 0.56, Present Replicas: 12
+Updated replicas to 11
+

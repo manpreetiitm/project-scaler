@@ -6,7 +6,7 @@ import json
 TARGET_CPU_UTILIZATION = 0.80
 CHECK_INTERVAL = 5  # seconds
 API_BASE_URL = "http://localhost:8123/app"  # Default port can be overridden by --port flag
-min_replicas = 1
+min_replicas = 1 # Replicas shouldnt go below this
 
 def get_current_status():
     """Fetch the current status of the application to get CPU utilization and replica count."""
@@ -28,22 +28,17 @@ def main():
             current_cpu = status['cpu']['highPriority']
             current_replicas = status['replicas']
 
-            print(f"Current CPU Utilization: {current_cpu}, Current Replicas: {current_replicas}")
+            print(f"Present CPU Utilization: {current_cpu}, Present Replicas: {current_replicas}")
 
             # Calculate desired replicas to maintain target CPU utilization
             if current_cpu > TARGET_CPU_UTILIZATION:
-                # Increase replicas to reduce CPU utilization
-               # print("current replicas:", current_replicas)
-               # print("current_cpu:", current_cpu)
-               # print("Target_cpu_util:" , TARGET_CPU_UTILIZATION)
                 new_replica_count = int(current_replicas * (current_cpu / TARGET_CPU_UTILIZATION))
             elif current_cpu == TARGET_CPU_UTILIZATION:
                print("Scaling is not required")
                exit() 
             else:
                 # Decrease replicas to increase CPU utilization
-                #new_replica_count = int(current_replicas * (TARGET_CPU_UTILIZATION / current_cpu))
-                new_replica_count = max(current_replicas - 1, min_replicas)
+                new_replica_count = max(current_replicas - 1, min_replicas) #Actual Auto-Scaler should reduce the number of replicas as well if CPU < Threshold 0.80
 
             new_replica_count = max(1, new_replica_count)  # Ensure replica count doesn't go below 1
             
