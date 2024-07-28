@@ -1,7 +1,7 @@
 # project-scaler
 scaler-project
 
-ScaleIt
+#ScaleIt
 ScaleIt is an auto-scaler application designed to manage the number of replicas of a separate application based on its CPU utilization metrics. The goal is to adjust the number of replicas dynamically to keep the average CPU utilization around 80% (0.80).
 
 Purpose
